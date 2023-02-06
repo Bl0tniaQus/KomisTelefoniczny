@@ -34,7 +34,8 @@ class AppController < ApplicationController
 		end
 	end
 	def addaction
-		p params[:zdjecie].tempfile.path()
-		user = User.find(session[:current_user_id])
+		p params[:producent]
+		#p params[:zdjecie].tempfile.path()
+		#user = User.find(session[:current_user_id])
 	end
 end

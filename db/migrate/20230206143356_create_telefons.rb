@@ -18,10 +18,11 @@ class CreateTelefons < ActiveRecord::Migration[7.0]
       t.string :lacznosc
       t.string :klawiatura
       t.string :opis
-      t.boolean :czy_uzywany
-      t.boolean :czy_uszkodzony
+      t.string :czy_uzywany
+      t.string :czy_uszkodzony
       t.float :cena
-      t.string :zdjeciebin
+      t.string :zdjecie
+      t.string :kontakt
       t.timestamps
     end
   end

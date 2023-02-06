@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>add</title>
+	<style>
+		.form_field
+		{
+			display:block;
+		}
+	</style>
 </head>
 <body>
 <h1>Add</h1>
@@ -14,9 +19,79 @@
 
 
 <%= form_with url: "/app/addaction", method: :post do |form| %>
+
+<span class="form_field"><%= form.label :producent, "Producent: " %>
+<%= form.text_field :producent %></span>
+
+<span class="form_field"><%= form.label :nazwa, "Nazwa(Model): " %>
+<%= form.text_field :nazwa, required:true%></span>
+
+<span class="form_field"><%= form.label :system, "System operacyjny: " %>
+<%= form.select :system, ["Android", "iOs", "Windows Phone", "Linux Phone", "Inny"] %></span>
+
+<span class="form_field"><%= form.label :ekran, "Przekątna ekranu [cal]: " %>
+<%= form.number_field :ekran, step:0.1 %></span>
+
+<span class="form_field"><%= form.label :rozdzielczosc, "Rozdzielczość ekranu [dpi]: " %>
+<%= form.number_field :rozdzielczosc, step:0.1  %></span>
+
+<span class="form_field"><%= form.label :ram, "Pamięć RAM [GB]: " %>
+<%= form.number_field :ram, step:0.1  %></span>
+
+<span class="form_field"><%= form.label :pamiec, "Pamięć wewnętrzna [GB]: " %>
+<%= form.number_field :pamiec, step:0.1  %></span>
+
+<span class="form_field"><%= form.label :bateria, "Pojemność baterii [mAh]: " %>
+<%= form.number_field :bateria, step:0.1  %></span>
+
+<span class="form_field"><%= form.label :microsd, "Obsługa kart pamięci: " %>
+<%= form.radio_button :microsd, "Tak" %>Tak
+<%= form.radio_button :microsd, "Nie" %>Nie</span>
+
+<span class="form_field"><%= form.label :dualsim, "Obsługa Dual-Sim: " %>
+<%= form.radio_button :dualsim, "Tak" %>Tak
+<%= form.radio_button :dualsim, "Nie" %>Nie</span>
+
+<span class="form_field"><%= form.label :kolor, "Kolor: " %>
+<%= form.text_field :kolor %></span>
+
+<span class="form_field"><%= form.label :aparat, "Rozdzielczość aparatu [MPx]: " %>
+<%= form.number_field :aparat, step:0.1  %></span>
+
+<span class="form_field"><%= form.label :audio, "Łącze audo (Mini-jack): " %>
+<%= form.radio_button :audio, "Tak" %>Tak
+<%= form.radio_button :audio, "Nie" %>Nie</span>
+
+<span class="form_field"><%= form.label :nfc, "Obsługa NFC: " %>
+<%= form.radio_button :nfc, "Tak" %>Tak
+<%= form.radio_button :nfc, "Nie" %>Nie</span>
+
+<span class="form_field"><%= form.label :lacznosc, "Obsługiwana łaczność: " %>
+<%= form.select :lacznosc, ["3G", "4G LTE", "5G"] %></span>
+
+<span class="form_field"><%= form.label :klawiatura, "Klawiatura fizyczna: " %>
+<%= form.radio_button :klawiatura, "Tak" %>Tak
+<%= form.radio_button :klawiatura, "Nie" %>Nie</span>
+
+<span class="form_field"><%= form.label :czy_uzywany, "Czy używany?: " %>
+<%= form.radio_button :czy_uzywany, "Tak" %>Tak
+<%= form.radio_button :czy_uzywany, "Nie" %>Nie</span>
+
+<span class="form_field"><%= form.label :czy_uszkodzony, "Czy uszkodzony?: " %>
+<%= form.radio_button :czy_uszkodzony, "Tak" %>Tak
+<%= form.radio_button :czy_uszkodzony, "Nie" %>Nie</span>
+
+<span class="form_field"><%= form.label :opis, "Dodatkowe informacje: " %>
+<%= form.text_area :opis %></span>
+
+<span class="form_field"><%= form.label :cena, "Cena [PLN]: " %>
+<%= form.number_field :cena, min:0, step:0.01, required:true%></span>
+
+<span class="form_field"><%= form.label :kontakt, "Dane kontaktowe: " %>
+<%= form.text_area :kontakt, required:true%></span>
 <span class="form_field"><%= form.label :zdjecie, "Zdjęcie: " %>
-<%= form.file_field :zdjecie %></span>
-<%= form.submit "submit" %>
+<%= form.file_field :zdjecie, required:true %></span>
+<%= form.submit "Dodaj ogłoszenie" %>
 <% end %>
 
 </body>
