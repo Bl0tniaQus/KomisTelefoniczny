@@ -1,0 +1,47 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  producent: MyString
+  nazwa: MyString
+  system: MyString
+  ekran: MyString
+  rozdzielczosc: MyString
+  ram: MyString
+  pamiec: MyString
+  bateria: MyString
+  microsd: MyString
+  dualsim: MyString
+  kolor: MyString
+  aparat: MyString
+  audio: MyString
+  nfc: MyString
+  lacznosc: MyString
+  klawiatura: MyString
+  opis: MyString
+  czy_uzywany: MyString
+  czy_uszkodzony: MyString
+  cena: MyString
+  zdjecie: MyString
+
+two:
+  producent: MyString
+  nazwa: MyString
+  system: MyString
+  ekran: MyString
+  rozdzielczosc: MyString
+  ram: MyString
+  pamiec: MyString
+  bateria: MyString
+  microsd: MyString
+  dualsim: MyString
+  kolor: MyString
+  aparat: MyString
+  audio: MyString
+  nfc: MyString
+  lacznosc: MyString
+  klawiatura: MyString
+  opis: MyString
+  czy_uzywany: MyString
+  czy_uszkodzony: MyString
+  cena: MyString
+  zdjecie: MyString

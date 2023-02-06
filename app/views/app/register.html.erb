@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.form_field
+		{
+			display:block;
+		}
+	</style>
+</head>
+<body>
+<h1>Register</h1>
+<div>
+	<div><%= link_to "index", "/app/index" %></div>
+	<div><%= link_to "add", "/app/add" %></div>
+	<div><%= link_to "login", "/app/login"%></div>
+	<div><%= link_to "register", "/app/register"%></div>
+</div>
+<%= form_with url: "/app/registeraction", method: :post do |form| %>
+<span class="form_field"><%= form.label :login, "Login: " %>
+<%= form.text_field :login %></span>
+<span class="form_field"><%= form.label :password, "Hasło: " %>
+<%= form.password_field :password %></span>
+<%= form.submit "submit" %>
+<% end %>
+</body>
+</html>

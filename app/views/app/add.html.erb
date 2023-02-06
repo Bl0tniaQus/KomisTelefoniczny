@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>add</title>
+</head>
+<body>
+<h1>Add</h1>
+<div>
+	<div><%= link_to "index", "/app/index" %></div>
+	<div><%= link_to "add", "/app/add" %></div>
+	<div><%= link_to "login", "/app/login"%></div>
+	<div><%= link_to "register", "/app/register"%></div>
+</div>
+
+
+<%= form_with url: "/app/addaction", method: :post do |form| %>
+<span class="form_field"><%= form.label :zdjecie, "Zdjęcie: " %>
+<%= form.file_field :zdjecie %></span>
+<%= form.submit "submit" %>
+<% end %>
+
+</body>
+</html>
