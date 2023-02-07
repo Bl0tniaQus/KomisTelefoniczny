@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<div class="szczegoly_container">
+
+<img src="data:image/png;base64, <%= @telefon.zdjecie %>"/>
+<ul>
+					<li>Sprzedawca: <%= @sprzedawca %> </li>
+					<li>Model: <%= @telefon.nazwa %></li>
+					<li>Producent: <%= @telefon.producent %></li>
+					<li>Cena: <%= @telefon.cena %></li>
+					<li>Wymiary ekranu: <%= @telefon.ekran %></li>
+					<li>Rozdzielczość wyświetlacza: <%= @telefon.rozdzielczosc %></li>
+					<li>Pamięć RAM: <%= @telefon.ram %></li>
+					<li>System operacyjny: <%= @telefon.system %></li>
+					<li>Pojemność baterii: <%= @telefon.bateria %></li>
+					<li>Obsługa kart pamięci: <%= @telefon.microsd %></li>
+					<li>Obsługa dualsim: <%= @telefon.dualsim %></li>
+					<li>Obsługa NFC: <%= @telefon.nfc %></li>
+					<li>Rozdzielczość aparatu: <%= @telefon.aparat %></li>
+					<li>Złącze audio: <%= @telefon.audio %></li>
+					<li>Obsługiwana łączność: <%= @telefon.lacznosc %></li>
+					<li>Fizyczna klawiatura: <%= @telefon.klawiatura %></li>
+					<li>Kolor: <%= @telefon.kolor	%></li>
+					<li>Używany: <%= @telefon.czy_uzywany %></li>
+					<li>Uszkodzony: <%= @telefon.czy_uszkodzony %></li>
+					<li>Dodatkowe uwagi: <%= @telefon.opis %></li>
+					<li>Dane kontaktowe: <%= @telefon.kontakt %></li>
+				</ul>
+</div>
+</html>
