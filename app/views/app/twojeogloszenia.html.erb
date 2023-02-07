@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<style>
-	html, body {height: 100%; width:100%;}
+<style>
+		html, body {height: 100%; width:100%;}
 	.podglad_left img {max-height:100%; max-width: 100%;margin-left:auto; margin-right:auto;}
 	.podglad_left {float:left; width:35%; height:100%; text-align:center; display:flex; justify-content: center; align-items:center;}
 	.podglad_lista:nth-child(odd) {background-color:aquamarine;}
@@ -12,34 +9,8 @@
 	.podglad_lista {width:45%; height:80%;outline: 1px solid black; margin-left:auto; margin-right:auto; overflow-y:scroll}
 	.nav div {display:inline-block;}
 	</style>
-</head>
-<body>
-<h1>Index</h1>
-<h2><%= @username %></h2>
-
-<div class="nav">
-	<div><%= link_to "index", "/app/index" %></div>
-	<div><%= link_to "add", "/app/add" %></div>
-	<div><%= link_to "login", "/app/login"%></div>
-	<div><%= link_to "register", "/app/register"%></div>
-	<div><%= link_to "logout", "/app/logout"%></div>
-</div>
-
-<div class="search">
-	<%= form_with url: "/app/index", method: :get do |form| %>
-	<span class="form_field"><%= form.label :search, "Szukana fraza: " %>
-	<%= form.text_field :search, value: @frazaprz %></span>
-	
-	Cena: od <%= form.number_field :cenamin, value: @cenamin, step:0.01, class: "szukaj_cena" %>
-	do <%= form.number_field :cenamax, value: @cenamax, step:0.01, class: "szukaj_cena" %> [PLN]
-	
-	<%= form.submit "Szukaj" %>
-	<% end %>
-</div>
-
-
 <div class="podglad_lista">
-	<% @lista.each do |telefon| %>
+	<% @telefony.each do |telefon| %>
 		<div class="podglad_container">
 			<div class="podglad_left">
 				<img src="data:image/png;base64, <%= telefon.zdjecie %>"/>
@@ -53,11 +24,10 @@
 					<li>Pamięć RAM: <%= telefon.ram %></li>
 					<li>Pamięć wewnętrzna: <%= telefon.pamiec %></li>
 				</ul>
-				<p class="podglad_wiecej"><%= link_to "Szczegóły", controller:"app", action: "telefon", id: telefon.id %><p>
+				<span class="ogloszenia_akcja"><%= link_to "Szczegóły", controller:"app", action: "telefon", id: telefon.id %></span>
+				<span class="ogloszenia_akcja"><%= link_to "Usuń", controller:"app", action: "usun", id: telefon.id %></span>
+				<span class="ogloszenia_akcja"><%= link_to "Modyfikuj", controller:"app", action: "modyfikuj", id: telefon.id %></span>
 			</div>
 		</div>
 	<% end %>
 </div>
-
-</body>
-</html>

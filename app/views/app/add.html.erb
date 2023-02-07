@@ -45,11 +45,11 @@
 <%= form.number_field :bateria, step:0.1  %></span>
 
 <span class="form_field"><%= form.label :microsd, "Obsługa kart pamięci: " %>
-<%= form.radio_button :microsd, "Tak" %>Tak
+<%= form.radio_button :microsd, "Tak", checked:true %>Tak
 <%= form.radio_button :microsd, "Nie" %>Nie</span>
 
 <span class="form_field"><%= form.label :dualsim, "Obsługa Dual-Sim: " %>
-<%= form.radio_button :dualsim, "Tak" %>Tak
+<%= form.radio_button :dualsim, "Tak", checked:true %>Tak
 <%= form.radio_button :dualsim, "Nie" %>Nie</span>
 
 <span class="form_field"><%= form.label :kolor, "Kolor: " %>
@@ -59,26 +59,26 @@
 <%= form.number_field :aparat, step:0.1  %></span>
 
 <span class="form_field"><%= form.label :audio, "Łącze audo (Mini-jack): " %>
-<%= form.radio_button :audio, "Tak" %>Tak
+<%= form.radio_button :audio, "Tak", checked:true %>Tak
 <%= form.radio_button :audio, "Nie" %>Nie</span>
 
 <span class="form_field"><%= form.label :nfc, "Obsługa NFC: " %>
-<%= form.radio_button :nfc, "Tak" %>Tak
+<%= form.radio_button :nfc, "Tak", checked:true %>Tak
 <%= form.radio_button :nfc, "Nie" %>Nie</span>
 
 <span class="form_field"><%= form.label :lacznosc, "Obsługiwana łaczność: " %>
 <%= form.select :lacznosc, ["3G", "4G LTE", "5G"] %></span>
 
 <span class="form_field"><%= form.label :klawiatura, "Klawiatura fizyczna: " %>
-<%= form.radio_button :klawiatura, "Tak" %>Tak
+<%= form.radio_button :klawiatura, "Tak", checked:true %>Tak
 <%= form.radio_button :klawiatura, "Nie" %>Nie</span>
 
 <span class="form_field"><%= form.label :czy_uzywany, "Czy używany?: " %>
-<%= form.radio_button :czy_uzywany, "Tak" %>Tak
+<%= form.radio_button :czy_uzywany, "Tak", checked:true %>Tak
 <%= form.radio_button :czy_uzywany, "Nie" %>Nie</span>
 
 <span class="form_field"><%= form.label :czy_uszkodzony, "Czy uszkodzony?: " %>
-<%= form.radio_button :czy_uszkodzony, "Tak" %>Tak
+<%= form.radio_button :czy_uszkodzony, "Tak", checked:true %>Tak
 <%= form.radio_button :czy_uszkodzony, "Nie" %>Nie</span>
 
 <span class="form_field"><%= form.label :opis, "Dodatkowe informacje: " %>
