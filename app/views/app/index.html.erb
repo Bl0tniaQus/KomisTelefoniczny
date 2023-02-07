@@ -1,17 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>index</title>
+	<style>
+		html, body {height: 100%; width:100%;}
+	.podglad_left img {max-height:100%; max-width: 100%;margin-left:auto; margin-right:auto;}
+	.podglad_left {float:left; width:35%; height:100%; text-align:center;}
+	.podglad_lista:nth-child(odd) {background-color:aquamarine;}
+	.podglad_right {float:left; width:65%; height:100%;}
+	.podglad_container {clear:both;height:210px; width:100%;}
+	.podglad_container div {outline: 1px solid black;}
+	.podglad_lista {width:45%; height:80%;outline: 1px solid black; margin-left:auto; margin-right:auto; overflow-y:scroll}
+	.nav div {display:inline-block;}
+	</style>
 </head>
 <body>
 <h1>Index</h1>
 <h2><%= @username %></h2>
-<div>
+
+<div class="nav">
 	<div><%= link_to "index", "/app/index" %></div>
 	<div><%= link_to "add", "/app/add" %></div>
 	<div><%= link_to "login", "/app/login"%></div>
 	<div><%= link_to "register", "/app/register"%></div>
 </div>
-<%= @dupa =%>
+
+<div class="podglad_lista">
+	<% @lista.each do |telefon| %>
+		<div class="podglad_container">
+			<div class="podglad_left">
+				<img src="data:image/png;base64, <%= telefon.zdjecie %>"/>
+			</div>
+			<div class="podglad_right">
+				<ul>
+					<li>Model: <%= telefon.nazwa %></li>
+					<li>Producent: <%= telefon.producent %></li>
+					<li>Cena: <%= telefon.cena %></li>
+					<li>Wymiary ekranu: <%= telefon.ekran %></li>
+					<li>Pamięć RAM: <%= telefon.ram %></li>
+					<li>Pamięć wewnętrzna: <%= telefon.pamiec %></li>
+				</ul>
+				<p class="podglad_wiecej"><%= link_to "Szczegóły", controller:"app", action: "telefon", id: telefon.id %><p>
+			</div>
+		</div>
+	<% end %>
+</div>
+
 </body>
 </html>

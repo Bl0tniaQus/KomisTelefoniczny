@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'app/index'
+  get '/app/index'
   get 'app/register'
   get 'app/login'
   get 'app/add'
+  get 'app/telefon/:id', to: 'app#telefon'
   post 'app/registeraction'
   post 'app/loginaction'
   post 'app/addaction'
