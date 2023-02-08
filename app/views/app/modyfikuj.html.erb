@@ -32,7 +32,7 @@
 <span class="form_field"><%= form.label :ekran, "Przekątna ekranu [cal]: " %>
 <%= form.number_field :ekran, step:0.1, value: @telefon.ekran %></span><br />
 
-<span class="form_field"><%= form.label :rozdzielczosc, "Rozdzielczość ekranu [dpi]: " %>
+<span class="form_field"><%= form.label :rozdzielczosc, "Rozdzielczość ekranu [ppi]: " %>
 <%= form.number_field :rozdzielczosc, step:0.1, value: @telefon.rozdzielczosc  %></span><br />
 
 <span class="form_field"><%= form.label :ram, "Pamięć RAM [GB]: " %>
@@ -74,12 +74,12 @@
 <%= form.radio_button :klawiatura, "Nie", checked:@telefon.klawiatura=="Nie" %>Nie</span><br />
 
 <span class="form_field"><%= form.label :czy_uzywany, "Czy używany?: " %>
-<%= form.radio_button :czy_uzywany, "Tak", checked:@telefon.czy_uzywany="Tak" %>Tak
-<%= form.radio_button :czy_uzywany, "Nie", checked:@telefon.czy_uzywany="Nie" %>Nie</span><br />
+<%= form.radio_button :czy_uzywany, "Tak", checked:@telefon.czy_uzywany=="Tak" %>Tak
+<%= form.radio_button :czy_uzywany, "Nie", checked:@telefon.czy_uzywany=="Nie" %>Nie</span><br />
 
 <span class="form_field"><%= form.label :czy_uszkodzony, "Czy uszkodzony?: " %>
-<%= form.radio_button :czy_uszkodzony, "Tak", checked:@telefon.czy_uszkodzony="Tak" %>Tak
-<%= form.radio_button :czy_uszkodzony, "Nie", checked:@telefon.czy_uszkodzony="Nie" %>Nie</span><br />
+<%= form.radio_button :czy_uszkodzony, "Tak", checked:@telefon.czy_uszkodzony=="Tak" %>Tak
+<%= form.radio_button :czy_uszkodzony, "Nie", checked:@telefon.czy_uszkodzony=="Nie" %>Nie</span><br />
 
 <span class="form_field"><%= form.label :opis, "Dodatkowe informacje: " %>
 <%= form.text_area :opis, value: @telefon.opis %></span><br />

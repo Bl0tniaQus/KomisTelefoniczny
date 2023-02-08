@@ -1,22 +1,37 @@
-<!DOCTYPE html>
-<html>
-<div class="szczegoly_container">
+<div class="nav">
+	<div>Komis<span class="logo">Telefoniczny</span></div>
+	<div><%= link_to "Strona Główna", "/app/index" %></div>
+	<% if session[:logged_in]==true %>
+	<div><%= link_to "Dodaj ogłoszenie", "/app/add" %></div>
+	<div><%= link_to "Twoje ogłoszenia", "/app/twojeogloszenia"%></div>
+	<div class="username"><%= session[:current_user_name] %></div>
+	<div class="wyloguj"><%= link_to "Wyloguj", "/app/logout"%></div>
+	
+	
+	<% end %>
+	<% if session[:logged_in]!=true %>
+	<div><%= link_to "Zaloguj się", "/app/login"%></div>
+	<div><%= link_to "Zarejestruj się", "/app/register"%></div>
+	<% end %>
+</div>
 
+<div class="formularz_container">
+<div class="szczegoly">
 <img src="data:image/png;base64, <%= @telefon.zdjecie %>"/>
 <ul>
 					<li>Sprzedawca: <%= @sprzedawca %> </li>
 					<li>Model: <%= @telefon.nazwa %></li>
 					<li>Producent: <%= @telefon.producent %></li>
-					<li>Cena: <%= @telefon.cena %></li>
-					<li>Wymiary ekranu: <%= @telefon.ekran %></li>
-					<li>Rozdzielczość wyświetlacza: <%= @telefon.rozdzielczosc %></li>
-					<li>Pamięć RAM: <%= @telefon.ram %></li>
+					<li>Cena: <%= @telefon.cena %> [PLN]</li>
+					<li>Wymiary ekranu: <%= @telefon.ekran %> [cal]</li>
+					<li>Rozdzielczość wyświetlacza: <%= @telefon.rozdzielczosc %> [ppi]</li>
+					<li>Pamięć RAM: <%= @telefon.ram %> [GB]</li>
 					<li>System operacyjny: <%= @telefon.system %></li>
-					<li>Pojemność baterii: <%= @telefon.bateria %></li>
+					<li>Pojemność baterii: <%= @telefon.bateria %> [mAh]</li>
 					<li>Obsługa kart pamięci: <%= @telefon.microsd %></li>
 					<li>Obsługa dualsim: <%= @telefon.dualsim %></li>
 					<li>Obsługa NFC: <%= @telefon.nfc %></li>
-					<li>Rozdzielczość aparatu: <%= @telefon.aparat %></li>
+					<li>Rozdzielczość aparatu: <%= @telefon.aparat %> [Mpx]</li>
 					<li>Złącze audio: <%= @telefon.audio %></li>
 					<li>Obsługiwana łączność: <%= @telefon.lacznosc %></li>
 					<li>Fizyczna klawiatura: <%= @telefon.klawiatura %></li>
@@ -25,6 +40,6 @@
 					<li>Uszkodzony: <%= @telefon.czy_uszkodzony %></li>
 					<li>Dodatkowe uwagi: <%= @telefon.opis %></li>
 					<li>Dane kontaktowe: <%= @telefon.kontakt %></li>
-				</ul>
+</ul></div>
 </div>
-</html>
+<div class="footer">Adrian Hałys 2023</div>

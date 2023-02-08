@@ -30,7 +30,7 @@
 					<li>Pamięć RAM: <%= telefon.ram %></li>
 					<li>Pamięć wewnętrzna: <%= telefon.pamiec %></li>
 				</ul>
-				<span class="ogloszenia_akcja"><%= link_to "Szczegóły", controller:"app", action: "telefon", id: telefon.id %></span>
+				<span class="ogloszenia_akcja"><%= link_to "Szczegóły", url_options={controller:"app", action: "telefon", id: telefon.id}, target:"_blank" %></span>
 				<span class="ogloszenia_akcja"><%= link_to "Usuń", controller:"app", action: "usun", id: telefon.id %></span>
 				<span class="ogloszenia_akcja"><%= link_to "Modyfikuj", controller:"app", action: "modyfikuj", id: telefon.id %></span>
 			</div>
