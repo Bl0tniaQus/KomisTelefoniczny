@@ -1,14 +1,20 @@
-<style>
-		html, body {height: 100%; width:100%;}
-	.podglad_left img {max-height:100%; max-width: 100%;margin-left:auto; margin-right:auto;}
-	.podglad_left {float:left; width:35%; height:100%; text-align:center; display:flex; justify-content: center; align-items:center;}
-	.podglad_lista:nth-child(odd) {background-color:aquamarine;}
-	.podglad_right {float:left; width:65%; height:100%;}
-	.podglad_container {clear:both;height:210px; width:100%;}
-	.podglad_container div {outline: 1px solid black;}
-	.podglad_lista {width:45%; height:80%;outline: 1px solid black; margin-left:auto; margin-right:auto; overflow-y:scroll}
-	.nav div {display:inline-block;}
-	</style>
+<div class="nav" style="border-bottom:1px solid navy;">
+	<div>Komis<span class="logo">Telefoniczny</span></div>
+	<div><%= link_to "Strona Główna", "/app/index" %></div>
+	<% if session[:logged_in]==true %>
+	<div><%= link_to "Dodaj ogłoszenie", "/app/add" %></div>
+	<div><%= link_to "Twoje ogłoszenia", "/app/twojeogloszenia"%></div>
+	<div class="username"><%= session[:current_user_name] %></div>
+	<div class="wyloguj"><%= link_to "Wyloguj", "/app/logout"%></div>
+	<% end %>
+	<% if session[:logged_in]!=true %>
+	<div><%= link_to "Zaloguj się", "/app/login"%></div>
+	<div><%= link_to "Zarejestruj się", "/app/register"%></div>
+	<% end %>
+</div>
+<div class="search">
+	<p>Twoje ogłoszenia</p>
+</div>
 <div class="podglad_lista">
 	<% @telefony.each do |telefon| %>
 		<div class="podglad_container">
@@ -31,3 +37,4 @@
 		</div>
 	<% end %>
 </div>
+<div class="footer">Adrian Hałys 2023</div>

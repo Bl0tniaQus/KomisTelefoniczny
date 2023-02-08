@@ -1,10 +1,5 @@
 class AppController < ApplicationController
 	def index
-		if session[:current_user_name]!=nil then
-			@username = session[:current_user_name]
-		end
-		
-		
 		if params[:search]==nil or params[:search]=="" then
 			@lista = Telefon.all.order('created_at DESC')	
 		else

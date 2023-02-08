@@ -1,15 +1,179 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+html, body
+{
+	height: 93%;
+	width:100%;
+	font-family:liberation-serif;
+	background-color:powderblue;
+}
+.nav 
+{
+	display:flex;
+	background-color:lightskyblue;
+	position:absolute;
+	top:0;
+	left:0;
+	height:7.5%;
+	width:100%;
+}
+.footer
+{
+	background-color:lightskyblue;
+	outline: 1px solid navy;
+	height:3%;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	font-size:12px;
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+}
+.search
+{
+	height:4.75%;
+	width:100%;
+	text-align:center;
+	background-color:#54b9f8;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	outline: 1px solid navy;
+	position:absolute;
+	top:7.5%;
+	left:0;
+}
+.search input[type="number"]
+{
+	width:60px;
+}
+input[type="submit"]
+{
+	border: none;
+	background-color:MediumTurquoise;
+	font-weight:bold;
+	cursor:pointer;
+	padding:6px;
+	width:85px;
+}
+a
+{
+	text-decoration:none;
+}
+a:visited, .nav a:link, .nav a:active
+{
+	color:navy;
+}
+.logo
+{
+	color:navy;
+	font-weight:bold;
+	font-size:18px;
+}
+.nav div 
+{
+	padding:20px;
+	border-right: 1px solid navy;
+}
+.podglad_left img 
+{
+	max-height:100%;
+	max-width: 100%;
+	margin-left:auto;
+	margin-right:auto;
+}
+.podglad_left 
+{
+	float:left;
+	width:35%;
+	height:100%;
+	text-align:center;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+}
+.podglad_lista
+{
+	background-color:MediumTurquoise;
+}
+.podglad_right 
+{
+	float:left;
+	width:65%; 
+	height:100%;
+}
+.podglad_container 
+{
+	clear:both;
+	height:210px; 
+	width:100%;
+	
+}
+.podglad_container div
+{
+	outline: 1px solid navy;
+}
+.podglad_lista 
+{
+	
+	width:65%;
+	height:98%;
+	outline: 1px solid navy;
+	margin-left:auto;
+	margin-right:auto;
+	overflow-y:scroll;
+	margin-top:5.75%;
+}
+.podglad_wiecej a
+{
+	margin-left:23px;
+}
+.username
+{
+font-weight:bold;
+font-size:17px;
+color: navy;
+}
+.wyloguj
+{
+	background-color:lightcoral;
+}
+.formularz_container
+{
+	width:65%;
+	height:103.21%;
+	outline: 1px solid navy;
+	background-color:aquamarine;
+	margin-left:auto;
+	margin-right:auto;
+	overflow-y:scroll;
+	margin-top:3.6%;
+}
+.formularz_container h1
+{
+	text-align:center;
+}
+.formularz_container *
+{
+	text-align:center;
+}
+.formularz_container input
+{
+	margin:12px;
+}
+.search p
+{
+font-weight: bold;
+}
+span.form_field
+{
+	display:inline-block;
+}
+#form_add
+{
+	text-align:left;
+	margin-left:auto;
+	margin-right:auto;
+	width:43%;
+}
+
