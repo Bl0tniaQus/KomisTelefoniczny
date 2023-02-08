@@ -105,7 +105,6 @@ class AppController < ApplicationController
 			redirect_to "/app/index"
 		else
 			telefon = Telefon.find(params[:idtelefonu])
-			p "dupa"
 			if telefon.user_id == session[:current_user_id] then
 				if params[:zdjecie]==nil then
 					zdj = telefon.zdjecie

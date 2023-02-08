@@ -12,91 +12,62 @@
 	<div><%= link_to "Zarejestruj się", "/app/register"%></div>
 	<% end %>
 </div>
-
 <div class="formularz_container">
 <h1>Modyfikuj ogłoszenie nr. <%= @telefon.id %></h1>
-
 <%= form_with url: "/app/modyfikujaction", id:"form_add", method: :post do |form| %>
-
 <%= form.hidden_field :idtelefonu, value:@telefon.id %>
-
 <span class="form_field"><%= form.label :producent, "Producent: "%>
 <%= form.text_field :producent, value: @telefon.producent %></span><br />
-
 <span class="form_field"><%= form.label :nazwa, "Nazwa(Model): " %>
 <%= form.text_field :nazwa, required:true, value: @telefon.nazwa%></span><br />
-
 <span class="form_field"><%= form.label :system, "System operacyjny: " %>
 <%= form.select :system, ["Android", "iOs", "Windows Phone", "Linux Phone", "Inny"], default:@telefon.system %></span><br />
-
 <span class="form_field"><%= form.label :ekran, "Przekątna ekranu [cal]: " %>
 <%= form.number_field :ekran, step:0.1, value: @telefon.ekran %></span><br />
-
 <span class="form_field"><%= form.label :rozdzielczosc, "Rozdzielczość ekranu [ppi]: " %>
 <%= form.number_field :rozdzielczosc, step:0.1, value: @telefon.rozdzielczosc  %></span><br />
-
 <span class="form_field"><%= form.label :ram, "Pamięć RAM [GB]: " %>
 <%= form.number_field :ram, step:0.1, value: @telefon.ram  %></span><br />
-
 <span class="form_field"><%= form.label :pamiec, "Pamięć wewnętrzna [GB]: " %>
 <%= form.number_field :pamiec, step:0.1, value: @telefon.pamiec  %></span><br />
-
 <span class="form_field"><%= form.label :bateria, "Pojemność baterii [mAh]: " %>
 <%= form.number_field :bateria, step:0.1, value: @telefon.bateria  %></span><br />
-
 <span class="form_field"><%= form.label :microsd, "Obsługa kart pamięci: " %>
 <%= form.radio_button :microsd, "Tak", checked:@telefon.microsd=="Tak" %>Tak
 <%= form.radio_button :microsd, "Nie", checked:@telefon.microsd=="Nie" %>Nie</span><br />
-
 <span class="form_field"><%= form.label :dualsim, "Obsługa Dual-Sim: " %>
 <%= form.radio_button :dualsim, "Tak", checked:@telefon.dualsim=="Tak" %>Tak
 <%= form.radio_button :dualsim, "Nie", checked:@telefon.dualsim=="Nie" %>Nie</span><br />
-
 <span class="form_field"><%= form.label :kolor, "Kolor: " %>
 <%= form.text_field :kolor, value: @telefon.kolor %></span><br />
-
 <span class="form_field"><%= form.label :aparat, "Rozdzielczość aparatu [MPx]: " %>
 <%= form.number_field :aparat, step:0.1, value: @telefon.aparat  %></span><br />
-
 <span class="form_field"><%= form.label :audio, "Łącze audo (Mini-jack): " %>
 <%= form.radio_button :audio, "Tak", checked:@telefon.audio=="Tak" %>Tak
 <%= form.radio_button :audio, "Nie", checked:@telefon.audio=="Nie" %>Nie</span><br />
-
 <span class="form_field"><%= form.label :nfc, "Obsługa NFC: " %>
 <%= form.radio_button :nfc, "Tak", checked:@telefon.nfc=="Tak" %>Tak
 <%= form.radio_button :nfc, "Nie", checked:@telefon.nfc=="Nie" %>Nie</span><br />
-
 <span class="form_field"><%= form.label :lacznosc, "Obsługiwana łaczność: " %>
 <%= form.select :lacznosc, ["3G", "4G LTE", "5G"], default:@telefon.system %></span><br />
-
 <span class="form_field"><%= form.label :klawiatura, "Klawiatura fizyczna: " %>
 <%= form.radio_button :klawiatura, "Tak", checked:@telefon.klawiatura=="Tak" %>Tak
 <%= form.radio_button :klawiatura, "Nie", checked:@telefon.klawiatura=="Nie" %>Nie</span><br />
-
 <span class="form_field"><%= form.label :czy_uzywany, "Czy używany?: " %>
 <%= form.radio_button :czy_uzywany, "Tak", checked:@telefon.czy_uzywany=="Tak" %>Tak
 <%= form.radio_button :czy_uzywany, "Nie", checked:@telefon.czy_uzywany=="Nie" %>Nie</span><br />
-
 <span class="form_field"><%= form.label :czy_uszkodzony, "Czy uszkodzony?: " %>
 <%= form.radio_button :czy_uszkodzony, "Tak", checked:@telefon.czy_uszkodzony=="Tak" %>Tak
 <%= form.radio_button :czy_uszkodzony, "Nie", checked:@telefon.czy_uszkodzony=="Nie" %>Nie</span><br />
-
 <span class="form_field"><%= form.label :opis, "Dodatkowe informacje: " %>
 <%= form.text_area :opis, value: @telefon.opis %></span><br />
-
 <span class="form_field"><%= form.label :cena, "Cena [PLN]: " %>
 <%= form.number_field :cena, min:0, step:0.01, required:true, value: @telefon.cena %></span><br />
-
 <span class="form_field"><%= form.label :kontakt, "Dane kontaktowe: " %>
 <%= form.text_area :kontakt, required:true, value: @telefon.kontakt%></span><br />
 <span class="form_field"><%= form.label :zdjecie, "Zdjęcie: " %>
 <%= form.file_field :zdjecie %></span><br />
-
-
-
 <%= form.submit "Modyfikuj" %>
 <%= link_to "Anuluj", controller:"app", action: "twojeogloszenia"%>
-
-<% end %>
-</div>
+<% end %></div>
 <div class="footer">Adrian Hałys 2023</div>

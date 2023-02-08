@@ -14,7 +14,6 @@
 	<div><%= link_to "Zarejestruj się", "/app/register"%></div>
 	<% end %>
 </div>
-
 <div class="search">
 	<%= form_with url: "/app/index", method: :get do |form| %>
 	<span class="form_field"><%= form.label :search, "Szukana fraza: " %>
@@ -26,8 +25,6 @@
 	<%= form.submit "Szukaj" %>
 	<% end %>
 </div>
-
-
 <div class="podglad_lista">
 	<% @lista.each do |telefon| %>
 		<div class="podglad_container">
@@ -48,5 +45,4 @@
 		</div>
 	<% end %>
 </div>
-
 <div class="footer">Adrian Hałys 2023</div>
